@@ -9,7 +9,7 @@ router.post("/", withAuth, async (req, res) => {
     const newPost = new Post({
       title: req.body.title,
       body: req.body.body,
-      author: req.user.id,
+      // author: req.user.id,
     });
     await newPost.save();
     res.json({ message: "Post created successfully" });
@@ -21,7 +21,7 @@ router.post("/", withAuth, async (req, res) => {
 // TODO - create a PUT route for updating a post's title or body
 router.put("/:id", withAuth, async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const post = await Post.findByPk(req.params.id);
     if (!post) return res.status(404).json({ message: "Post not found" });
     if (post.author.toString() !== req.user.id)
       return res.status(401).json({ message: "Not authorized" });
@@ -38,7 +38,7 @@ router.put("/:id", withAuth, async (req, res) => {
 // TODO - create a DELETE route for deleting a post with a specific id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const post = await Post.findByPk(req.params.id);
     if (!post) return res.status(404).json({ message: "Post not found" });
     if (post.author.toString() !== req.user.id)
       return res.status(401).json({ message: "Not authorized" });
