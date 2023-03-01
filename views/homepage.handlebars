@@ -1,7 +1,12 @@
 {{! TODO - write the template to show all posts on the / route }}
 {{! done  }}
+<style>
+  .post { border: 1px solid rgb(228, 179, 179); padding: 10px; margin-bottom:
+  20px; }
+</style>
 <h1>All Posts</h1>
 {{#each posts}}
-  <h3>{{title}}</h3>
-  <h3>{{body}}</h3>
+  <div class="post">
+    <h3>{{title}}</h3>
+    <h3>{{body}}</h3></div>
 {{/each}}

@@ -24,12 +24,17 @@ router.post("/", withAuth, async (req, res) => {
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const post = await Post.findByPk(req.params.id);
-    if (!post) return res.status(404).json({ message: "Post not found" });
-    if (post.author.toString() !== req.user.id)
+    if (!post) res.status(404).json({ message: "Post not found" });
+
+    if (post.author.toString() !== req.user.id) {
       return res.status(401).json({ message: "Not authorized" });
+    }
+
     post.title = req.body.title || post.title;
     post.body = req.body.body || post.body;
+
     await post.save();
+
     res.json({ message: "Post updated successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });

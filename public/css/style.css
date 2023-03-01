@@ -11,6 +11,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  background-color: #f4f4f4;
 }
 
 h1 {
@@ -20,7 +21,7 @@ h1 {
 }
 
 nav {
-  background-color: #f8f8f8;
+  background-color: #f4f4f4;
   border-bottom: 1px solid #ccc;
   padding: 1rem;
 }
@@ -60,19 +61,7 @@ main {
   background-color: #333;
   color: #fff;
 }
-/* .create-new-post {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: rgb(184, 41, 41);
-  text-decoration: none;
-  border-radius: 5px;
-}
 
-.create-new-post:hover {
-  background-color: #3e8e41;
-} */
-/* Style for the form container */
 .card-body {
   display: flex;
   flex-direction: column;

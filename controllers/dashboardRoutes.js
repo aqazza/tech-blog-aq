@@ -46,6 +46,14 @@ router.get("/delete/:id", withAuth, async (req, res) => {
   if (!post) return res.status(404).json({ message: "Post not found" });
   res.status(200).redirect("/dashboard");
 });
+
+router.get("/post/edit/:id", withAuth, async (req, res) => {
+  const post = await Post.findByPk(req.params.id);
+
+  if (!post) res.status(404).json({ message: "Post not found" });
+
+  res.status(200).render("single-post", { post });
+});
 // It should display a form for editing an existing post
 
 module.exports = router;
