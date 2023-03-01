@@ -1,3 +1,18 @@
+{{! TODO - write the template to show all the user's posts on the /dashboard route }}
+{{!-- <a href="/dashboard/new">Create Post</a>
+<h2 style="margin-left: 25%;">Posts</h2>
+{{ #each posts }} --}}
+{{#each posts as |post|}}
 
-{{!-- TODO - write the template to show all the user's posts on the /dashboard route --}}
-<h1>This is the dashboard main page that should display all of a users posts</h1>
+  <div class="post card">
+    <div class="card-header">
+      <h2>{{post.title}}</h2>
+    </div>
+    <div class="card-body">
+      <p>{{post.body}}</p>
+    </div>
+    <div class="card-footer">
+      <a href="/dashboard/delete/{{post.id}}">Delete</a>
+    </div>
+  </div>
+{{/each}}

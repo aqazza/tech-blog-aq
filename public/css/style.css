@@ -1,2 +1,148 @@
-
 /* TODO - Write your CSS here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+nav {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#logout-link {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#logout-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* .create-new-post {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: rgb(184, 41, 41);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.create-new-post:hover {
+  background-color: #3e8e41;
+} */
+/* Style for the form container */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+}
+
+/* Style for the form input fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for the login button */
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Style for the "Sign up instead" link */
+a[type="button"] {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mirror {
+  font-family: serif;
+  font-size: 40px;
+  position: relative;
+  line-height: 1.2;
+  color: transparent;
+  opacity: 0.9;
+  background: linear-gradient(to top, #1b4c76 0%, #4b7cb6 100%);
+  -webkit-background-clip: text;
+}
+
+.mirror::after {
+  content: attr(data);
+  position: absolute;
+  transform: scale(-1, 1) rotate(180deg);
+  bottom: -50%;
+  left: 0;
+  line-height: 1;
+  color: transparent;
+  opacity: 0.4;
+  background: linear-gradient(to top, #4b7cb6 0%, white 100%);
+  -webkit-background-clip: text;
+}

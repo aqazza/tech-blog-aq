@@ -1,18 +1,29 @@
-
+{{! done}}
 {{! Unstyled Signup view boilerplate is completed for you }}
 
-<h2>Sign Up</h2>
-<form id="signup-form" class="card-body">
-  <div>
-    <label for="username-input-signup">Username</label>
-    <input type="text" id="username-input-signup" />
-  </div>
-  <div>
-    <label for="password-input-signup">Password</label>
-    <input type="password" id="password-input-signup" />
-  </div>
-  <button type="submit">Signup!</button>
-  <a href="/login">Login instead</a>
-</form>
+{{! <style>
+  #signup-form { width: 400px; margin: 0 auto; padding: 40px; background-color:
+  #F2F2F2; border-radius: 10px; } label { font-size: 18px; font-weight: bold;
+  margin-top: 20px; display: block; } input[type="text"], input[type="password"]
+  { width: 100%; padding: 10px; margin-top: 10px; font-size: 18px; border: 1px
+  solid #ccc; border-radius: 5px; } button[type="submit"] { width: 100%;
+  padding: 10px; margin-top: 20px; background-color: #4CAF50; color: white;
+  font-size: 18px; border: none; border-radius: 5px; cursor: pointer; } a {
+  font-size: 18px; margin-top: 20px; display: block; text-align: center; color:
+  blue; }
+</style> }}
 
+<h2>Sign Up</h2>
+<form id="login-form" class="card-body">
+  <div>
+    <label for="username-input-login">Username</label>
+    <input type="text" id="username-input-login" />
+  </div>
+  <div>
+    <label for="password-input-login" class="form-label">Password</label>
+    <input type="password" id="password-input-login" />
+  </div>
+  <button type="submit">Login!</button>
+  <a type="button" href="/signup">Sign up instead</a>
+</form>
 <script src="/js/signup.js"></script>
