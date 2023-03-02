@@ -26,15 +26,6 @@ router.get("/new", withAuth, (req, res) => {
 // refer to admin-all-posts.handlebars write the code to display the posts
 
 // TODO - create logic for the GET route for /new that renders the new post page
-// It should display a form for creating a new post
-// router.get("/edit/:id", withAuth, async (req, res) => {
-//   const post = await Post.findOne({
-//     id: req.params.id,
-//     author: req.session.userId,
-//   });
-//   if (!post) return res.status(404).json({ message: "Post not found" });
-//   res.render("admin-edit-post", { layout: "dashboard", post });
-// });
 
 router.get("/delete/:id", withAuth, async (req, res) => {
   const post = await Post.destroy({
@@ -52,8 +43,9 @@ router.get("/post/edit/:id", withAuth, async (req, res) => {
 
   if (!post) res.status(404).json({ message: "Post not found" });
 
-  res.status(200).render("single-post", { post });
+  res.status(200).render("edit-post", post.get({ plain: true }));
 });
+
 // It should display a form for editing an existing post
 
 module.exports = router;
