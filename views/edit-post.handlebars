@@ -5,14 +5,17 @@
     <input
       type="text"
       id="title"
-      name="title"
+      name="post-title"
       value="{{post.title}}"
       required
     />
     <br />
     <label for="body">Body:</label>
-    <textarea id="body" name="body" required>{{post.body}}</textarea>
+    <textarea id="body" name="post-body" required>{{post.body}}</textarea>
     <br />
     <button type="submit">Save</button>
   </form>
+
+  <!-- edit.js script here -->
+  <script src="/js/edit.js"></script>
 </body>
