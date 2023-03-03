@@ -23,21 +23,20 @@ router.post("/", withAuth, async (req, res) => {
 // TODO - create a PUT route for updating a post's title or body
 router.put("/:id", withAuth, async (req, res) => {
   try {
-    const post = await Post.findByPk(req.params.id);
-    if (!post) res.status(404).json({ message: "Post not found" });
+    const [affectedRows] = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+        userId: req.session.userId,
+      },
+    });
 
-    if (post.author.toString() !== req.user.id) {
-      return res.status(401).json({ message: "Not authorized" });
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
     }
-
-    post.title = req.body.title || post.title;
-    post.body = req.body.body || post.body;
-
-    await post.save();
-
-    res.json({ message: "Post updated successfully" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json(err);
   }
 });
 // This should be a protected route, so you'll need to use the withAuth middleware

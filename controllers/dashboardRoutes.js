@@ -39,11 +39,22 @@ router.get("/delete/:id", withAuth, async (req, res) => {
 });
 
 router.get("/post/edit/:id", withAuth, async (req, res) => {
-  const post = await Post.findByPk(req.params.id);
+  try {
+    const postData = await Post.findByPk(req.params.id);
 
-  if (!post) res.status(404).json({ message: "Post not found" });
+    if (postData) {
+      const post = postData.get({ plain: true });
 
-  res.status(200).render("edit-post", post.get({ plain: true }));
+      res.render("edit-post", {
+        layout: "dashboard",
+        post,
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.redirect("login");
+  }
 });
 
 // It should display a form for editing an existing post
