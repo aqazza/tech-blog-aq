@@ -32,5 +32,5 @@ document
   .querySelector("#edit-post-form")
   .addEventListener("submit", editFormHandler);
 document
-  .querySelector("#delete-btn")
+  .querySelector("#delete-btn") // not being used
   .addEventListener("click", deleteClickHandler);

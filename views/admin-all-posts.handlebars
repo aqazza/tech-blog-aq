@@ -1,7 +1,5 @@
 {{! TODO - write the template to show all the user's posts on the /dashboard route }}
-{{!-- <a href="/dashboard/new">Create Post</a>
-<h2 style="margin-left: 25%;">Posts</h2>
-{{ #each posts }} --}}
+
 {{#each posts as |post|}}
 
   <div class="post card">
@@ -14,6 +12,7 @@
     <div class="card-footer">
       <a href="/dashboard/delete/{{post.id}}">Delete</a>
       <a href="/dashboard/post/edit/{{post.id}}">Edit</a>
+      <a href=""></a>
     </div>
   </div>
 {{/each}}
