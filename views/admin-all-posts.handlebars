@@ -9,6 +9,13 @@
     <div class="card-body">
       <p>{{post.body}}</p>
     </div>
+    {{! Todo - create a form with the id of new-comment-form 
+    Inside, create text area called post-body and a submit button.}}
+    <form id="new-comment-form">
+      <label for="post-body">Leave a comment</label>
+      <textarea name="post-body" id="post-body"></textarea>
+      <button type="submit">Submit</button>
+    </form>
     <div class="card-footer">
       <a href="/dashboard/delete/{{post.id}}">Delete</a>
       <a href="/dashboard/post/edit/{{post.id}}">Edit</a>
@@ -16,3 +23,5 @@
     </div>
   </div>
 {{/each}}
+
+<script src="/js/comment.js"></script>
