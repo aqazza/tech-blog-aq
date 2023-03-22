@@ -9,11 +9,20 @@
     <div class="card-body">
       <p>{{post.body}}</p>
     </div>
+
+    <h3>Comments</h3>
+    {{#each post.Comment}}
+      <div class="comment">
+        <p>{{body}}</p>
+        <p>By: {{User.username}}</p>
+      </div>
+    {{/each}}
+
     {{! Todo - create a form with the id of new-comment-form 
     Inside, create text area called post-body and a submit button.}}
     <form id="new-comment-form">
       <label for="post-body">Leave a comment</label>
-      <textarea name="post-body" id="post-body"></textarea>
+      <textarea name="post-body" id="post-body" value="{{post.id}}"></textarea>
       <button type="submit">Submit</button>
     </form>
     <div class="card-footer">
